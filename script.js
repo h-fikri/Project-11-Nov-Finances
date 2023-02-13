@@ -1,10 +1,4 @@
 document.write("This is From Javascript using 'document.write()'");
-console.log("Financial Analysis");
-console.log("------------------");
-console.log("Total:");
-console.log("Average Change:");
-console.log("Greatest Increase in Profits:");
-console.log("Greatest Decrease in Profits:");
 
 var finances = [
   ["Jan-2010", 867884],
@@ -95,51 +89,30 @@ var finances = [
   ["Feb-2017", 671099],
 ];
 
-console.log("testing finances");
-
-// console.log(
-//   finances.map(function (x) {
-//     return x[1];
-//   })
-// );
-
-// *DONE ! The total number of months included in the dataset.
+// * 1. DONE ! The total number of months included in the dataset.
 // => use length
-console.log(finances.length);
+var totalmonths = finances.length;
 
-finances = finances.map(function (item) {
-  // the 0,2 tells the splice function to remove (skip) the last item in this array
-  return item.splice(1);
-});
-
-console.table(finances);
-console.log(typeof finances);
-
-finances.valueOf();
-console.log(typeof finances);
-
-// var profitloss = 0;
-// for (var i = 0; i < finances.length; i++) {
-//   profitloss += finances[i];
-// }
-
-// console.log(profitloss);
-
-// document.getElementById("demo").innerHTML = profitloss;
-// console.log(profitloss);
-
-// console.log(finances[0][0]);
-// console.log(finances[1][0]);
-// console.log(finances[0][1]);
-
-// *The net total amount of Profit/Losses over the entire period.
+// * 2. The net total amount of Profit/Losses over the entire period.
 // => use specific index and total the index?
+var totalAmount = 0;
+for (var i = 0; i < totalmonths; i++) {
+  totalAmount += finances[i][1];
+}
 
-// *The average of the **changes** in Profit/Losses over the entire period.
+// * 3. The average of the **changes** in Profit/Losses over the entire period.
 //  *You will need to track what the total change in profits are from month to month and then find the average.
 //  *`Total/Number of months`
 // => basic calculation
 
-//*The greatest increase in profits (date and amount) over the entire period.
+//* 4. The greatest increase in profits (date and amount) over the entire period.
 
-//*The greatest decrease in losses (date and amount) over the entire period.
+//* 5. The greatest decrease in losses (date and amount) over the entire period.
+
+console.log("Financial Analysis");
+console.log("------------------");
+console.log("1. Total Months: " + totalmonths + " months");
+console.log("2. Net Total Amount is: " + totalAmount);
+console.log("3. Average Change: ");
+console.log("4. Greatest Increase in Profits:");
+console.log("5. Greatest Decrease in Profits:");
