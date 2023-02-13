@@ -1,5 +1,3 @@
-document.write("This is From Javascript using 'document.write()'");
-
 var finances = [
   ["Jan-2010", 867884],
   ["Feb-2010", 984655],
