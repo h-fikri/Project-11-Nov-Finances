@@ -4,6 +4,8 @@ Javascript Finances
 
 ## Link to Deployed GitHub Pages:
 
+https://h-fikri.github.io/Project-11-Nov-Finances/
+
 ## The Challenges are:
 
 - The total number of months included in the dataset.
