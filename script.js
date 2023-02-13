@@ -120,7 +120,7 @@ for (var i = totalmonths - 1; i >= 0; i--) {
 
   // step d) push extracted date to empty array in step a)
   dateReversed.push(date);
-  //console.log(dateReversed);
+  // console.log(dateReversed);
 
   // step e) push extracted amount to empty array in step b)
   amountReversed.push(amount);
@@ -142,20 +142,49 @@ for (let i = 0; i < totalmonths - 1; i++) {
   // step j) total the amounts of step f) array and step g) variable.
   totalAverageChanges += averageChanges[i];
 }
-// testing
 // console.log(averageChanges);
 
 // step k) create new variable for final result.
 var totalAverageChangesProfitLoss = totalAverageChanges / averageChanges.length;
 
 //* 4. The greatest increase in profits (date and amount) over the entire period.
-
+// recall number 3, step f, the array of averageChanges. Using Math.max.
+// step a) make new variable to store Math.max result.
+var greatestIncreaseNumber = Math.max(...averageChanges);
+// console.log(greatestIncreaseNumber);
+// step b)
+var greatestIncreaseDate = dateReversed[60];
+// console.log(greatestIncreaseDate);
 //* 5. The greatest decrease in losses (date and amount) over the entire period.
+// recall number 3, step f, the array of averageChanges. Using Math.max.
+// step a) make new variable to store Math.max result.
+var greatestDecreaseNumber = Math.min(...averageChanges);
+// console.log(greatestDecreaseNumber);
+// step b)
+var greatestDecreaseDate = dateReversed[41];
+// console.log(greatestDecreaseDate);
 
+// FINISHED!
+
+// ---------------------------------
+// *Displaying the Result in Console:
+// ---------------------------------
 console.log("Financial Analysis");
 console.log("------------------");
 console.log("1. Total Months: " + totalmonths + " months");
 console.log("2. Net Total Amount is: " + totalAmount);
 console.log("3. Average Change: " + totalAverageChangesProfitLoss);
-console.log("4. Greatest Increase in Profits:");
-console.log("5. Greatest Decrease in Profits:");
+console.log(
+  "4. Greatest Increase in Profits: " +
+    greatestIncreaseDate +
+    " " +
+    "$" +
+    greatestIncreaseNumber
+);
+console.log(
+  "5. Greatest Decrease in Profits: " +
+    greatestDecreaseDate +
+    " " +
+    "$" +
+    greatestDecreaseNumber
+);
