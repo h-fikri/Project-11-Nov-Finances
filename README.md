@@ -1,6 +1,6 @@
 # Project-11-Nov-Finances
 
-Javascript Finances
+Console Finances
 
 ## Link to Deployed GitHub Pages:
 
