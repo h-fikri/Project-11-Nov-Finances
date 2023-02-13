@@ -103,7 +103,50 @@ for (var i = 0; i < totalmonths; i++) {
 // * 3. The average of the **changes** in Profit/Losses over the entire period.
 //  *You will need to track what the total change in profits are from month to month and then find the average.
 //  *`Total/Number of months`
-// => basic calculation
+
+// step a) create array to store result to reverse the date
+var dateReversed = [];
+
+// step b) create array to store result to reverse the amount
+var amountReversed = [];
+
+// step c) loop to reverse the order of finance array and get and split finance data
+for (var i = totalmonths - 1; i >= 0; i--) {
+  const [date, amount] = finances[i];
+
+  //testing
+  //console.log(date);
+  //console.log(amount);
+
+  // step d) push extracted date to empty array in step a)
+  dateReversed.push(date);
+  //console.log(dateReversed);
+
+  // step e) push extracted amount to empty array in step b)
+  amountReversed.push(amount);
+  //console.log(amountReversed);
+
+  // Splitting data success!
+}
+
+// step f) create new empty array for average changes to store new array later.
+var averageChanges = [];
+
+// step g) create variable for total changes to add data later.
+var totalAverageChanges = 0;
+
+// step h) loop to calcualte monthly difference and get the sum
+for (let i = 0; i < totalmonths - 1; i++) {
+  // step i) push the result in step h) to new array in step f)
+  averageChanges.push(amountReversed[i] - amountReversed[i + 1]);
+  // step j) total the amounts of step f) array and step g) variable.
+  totalAverageChanges += averageChanges[i];
+}
+// testing
+// console.log(averageChanges);
+
+// step k) create new variable for final result.
+var totalAverageChangesProfitLoss = totalAverageChanges / averageChanges.length;
 
 //* 4. The greatest increase in profits (date and amount) over the entire period.
 
@@ -113,6 +156,6 @@ console.log("Financial Analysis");
 console.log("------------------");
 console.log("1. Total Months: " + totalmonths + " months");
 console.log("2. Net Total Amount is: " + totalAmount);
-console.log("3. Average Change: ");
+console.log("3. Average Change: " + totalAverageChangesProfitLoss);
 console.log("4. Greatest Increase in Profits:");
 console.log("5. Greatest Decrease in Profits:");
