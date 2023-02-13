@@ -33,3 +33,10 @@ median = findMedian(numbers); // Median is 2.5
 Remember that you can use this function to find the median of any set of numbers, not just arrays. You can also modify the function to handle other data types, such as floating-point numbers, if needed.
 
 */
+
+console.log("Financial Analysis");
+console.log("------------------");
+console.log("Total:");
+console.log("Average Change:");
+console.log("Greatest Increase in Profits:");
+console.log("Greatest Decrease in Profits:");
